@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8">
+    <meta http-equiv="Access-Control-Allow-Origin" content="*">
+    <meta http-equiv="Pragma" contect="no-cache">
+    <title>电竞-个人中心</title>
+    <meta name="description" content="飓风电竞">
+    <meta name="Keywords" content="飓风电竞">
+    <link rel="shortcut icon" href="images/logo.png">
+    <link href="css/index.css" rel="stylesheet">
+    <script src="lib/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="lib/jquery.cookie.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/page.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body class="wrapper">
+<!--headeer-->
+<div class="header-box" id="headerMain">
+    <div class="container clear">
+        <a class="fl logo-header bt-tm-1px" href="index.html"><img src="images/logo.png"></a>
+        <ul class="fl left-header clear">
+            <li>
+                <span class="utlSpan" url="index.html">绝地求生</span>
+                <ol>
+                    <li>
+                        <span class="utlSpan"  url="index.html">竞技场</span>
+                    </li>
+                    <li>
+                        <span class="utlSpan"  url="gameRecords.html">比赛记录</span>
+                    </li>
+                </ol>
+            </li>
+            <li>
+                <a href="https://www.sobot.com/chat/pc/index.html?sysNum=4a16a0c380394bca8ffae5723f5b3903">联系客服</a>
+            </li>
+            <li>
+                <span class="utlSpan" url="exchangemMall.html">兑换商城</span>
+            </li>
+            <li>
+                <span class="utlSpan" url="chongzhi.html">充值</span>
+            </li>
+        </ul>
+        <div class="fr">
+            <ul class="right-header clear">
+                <li class="hrader-mine-right">
+                    <span><i class="icon-mine icon-msg"></i></span>
+                    <ol class="dno" id="alertMessges">
+                    </ol>
+                </li>
+                <li class="hrader-mine-right">
+                    <span  class="utlSpan" id="notice" url="SystemMessage.html"><i class="icon-mine icon-notice"></i></span>
+                </li>
+                <li class="bp-number-li">
+                    <p class="clear dno"><em class="fl">BP</em><span class="fr">0</span></p>
+                </li>
+                <li id="login">
+                    <div class="btns-login" ><span class="btn-cc pointer">登录</span></div>
+                </li>
+                <li class="islogin-box ml10 dno active">
+                    <span class="utlSpan" url="accountCenter.html">
+                        <div class="user-img">
+                            <img src="images/small-header.png" class="icon-wapper hover-bg1">
+                            <img src="images/small-header-hover.png" class="icon-wapper hover-bg">
+                            <img src="images/bangdingsteam.png" class="icon">
+                        </div>
+                    </span>
+                    <ol>
+                        <li class="active">
+                            <span class="utlSpan"  url="accountCenter.html">账户中心</span>
+                        </li>
+                        <li>
+                            <span class="utlSpan"  url="store.html">仓库</span>
+                        </li>
+                        <li><span  id="logoOut">退出</span></li>
+                    </ol>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--headeer-->
+<!--比赛记录-->
+<div class="center-account-box">
+    <div class="container bt-tm-1px">
+        <div class="bread-lr83">
+            <div class="bread-nav-account mt10">
+                <a class="active" href="accountCenter.html">账户中心</a>
+                <a href="store.html">仓库</a>
+            </div>
+        </div>
+        <div class="center-user-box clear">
+             <div class="fl left-center-account"  id="center_mine">
+                 <div class="user-img">
+                     <img src="images/big-head.png" class="icon-wapper">
+                     <img src="images/bangdingsteam.png" class="icon">
+                 </div>
+                 <p class="name-cc">用户昵称</p>
+                 <p>BP<em class="color-org">9999999</em></p>
+
+             </div>
+            <div class="fr right-center-account" id="right-center-account">
+                <div class="statistical-center-box clear">
+                    <div>
+                        <img src="images/today-btn.png" alt=""/>
+                        <p>今日收入<em class="dayAccount">0.00</em> BP</p>
+                    </div>
+                    <div>
+                        <img src="images/thisMonth-btn.png" alt=""/>
+                        <p>本月收入<em class="thisMouthGet">0.00</em>BP</p>
+                        <p>本月支出<em class="thisMouthPay">0.00</em> BP</p>
+                    </div>
+                    <div>
+                        <img src="images/lasrMonth-btn.png" alt=""/>
+                        <p>上月收入<em class="preMouthGet">0.00</em>BP</p>
+                        <p>上月支出<em class="preMouthPay">0.00</em> BP</p>
+                    </div>
+                </div>
+
+                <div class="bread-nav-account mt10">
+                    <span class="active">账户记录</span>
+                    <span>收入记录</span>
+                    <span>支出记录</span>
+                    <span>充值记录</span>
+                    <span>取货记录</span>
+                    <span>出售记录</span>
+                </div>
+                <div id="pageList-game-center" >
+                <div class="table-list-game game-infor-hovew" >
+                    <table class="mt20">
+                        <thead >
+                        <tr class="liushui-box">
+                            <th>流水号</th>
+                            <th>行为</th>
+                            <th>游戏</th>
+                            <th>bp变动</th>
+                            <th>bp余额</th>
+                            <th>时间</th>
+                        </tr>
+                        <tr class="order-box dno">
+                            <th>订单号</th>
+                            <th>物品详情</th>
+                            <th>状态</th>
+                            <th>时间</th>
+                        </tr>
+                        </thead>
+                        <tbody id="table-list-mine">
+                        </tbody>
+                    </table>
+                </div>
+                <div class="page-box page-color-999">
+                </div>
+                <div class="nofound-exchange-mall dno">
+                  <img src="images/toukui.png" alt="暂无相关信息！"/>
+                  <p> 暂无相关信息！</p></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--温馨提示-->
+<div class="pop-mask-alert pop-all-meceng dno" id="alertbox">
+    <!-- 弹窗-->
+    <div class="pop-bg-box bt-tm-1px" >
+        <i class="icon-delete"></i>
+        <div id="alertcont">
+            <div class="mengheader">提示</div>
+            <div id="alertsss"></div>
+            <i class="sure-alert-btn"></i>
+        </div>
+    </div>
+</div>
+
+</body>
+<script src="js/common.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/accountCenter.js" type="text/javascript" charset="utf-8"></script>
+</html>

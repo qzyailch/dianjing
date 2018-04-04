@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8">
+    <meta http-equiv="Access-Control-Allow-Origin" content="*">
+    <meta http-equiv="Pragma" contect="no-cache">
+    <title>电竞-兑换商城</title>
+    <meta name="description" content="飓风电竞">
+    <meta name="Keywords" content="飓风电竞">
+    <link rel="shortcut icon" href="images/logo.png">
+    <link href="css/index.css" rel="stylesheet">
+    <script src="lib/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="lib/jquery.cookie.js" type="text/javascript" charset="utf-8"></script>
+    <script src="lib/jquery.SuperSlide.2.1.1.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/page.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body class="wrapper">
+<!--headeer-->
+<div class="header-box" id="headerMain">
+    <div class="container clear">
+        <a class="fl logo-header bt-tm-1px" href="index.html"><img src="images/logo.png"></a>
+        <ul class="fl left-header clear">
+            <li>
+                <span class="utlSpan" url="index.html">绝地求生</span>
+                <ol>
+                    <li>
+                        <span class="utlSpan"  url="index.html">竞技场</span>
+                    </li>
+                    <li>
+                        <span class="utlSpan"  url="gameRecords.html">比赛记录</span>
+                    </li>
+                </ol>
+            </li>
+            <li class="active">
+                <span class="utlSpan" url="exchangemMall.html">兑换商城</span>
+            </li>
+            <li>
+                <a href="https://www.sobot.com/chat/pc/index.html?sysNum=4a16a0c380394bca8ffae5723f5b3903">联系客服</a>
+            </li>
+            <li>
+                <span class="utlSpan" url="chongzhi.html">充值</span>
+            </li>
+        </ul>
+        <div class="fr">
+            <ul class="right-header clear">
+                <li class="hrader-mine-right">
+                    <span><i class="icon-mine icon-msg"></i></span>
+                    <ol class="dno" id="alertMessges">
+                    </ol>
+                </li>
+                <li class="hrader-mine-right">
+                    <span  class="utlSpan" id="notice" url="SystemMessage.html"><i class="icon-mine icon-notice"></i></span>
+                </li>
+                <li class="bp-number-li">
+                    <p class="clear dno"><em class="fl">BP</em><span class="fr">0</span></p>
+                </li>
+                <li id="login">
+                    <div class="btns-login" ><span class="btn-cc pointer">登录</span></div>
+                </li>
+                <li class="islogin-box ml10 dno">
+                    <span class="utlSpan" url="accountCenter.html">
+                        <div class="user-img">
+                            <img src="images/small-header.png" class="icon-wapper hover-bg1">
+                            <img src="images/small-header-hover.png" class="icon-wapper hover-bg">
+                            <img src="images/bangdingsteam.png" class="icon">
+                        </div>
+                    </span>
+                    <ol>
+                        <li>
+                            <span class="utlSpan"  url="accountCenter.html">账户中心</span>
+                        </li>
+                        <li>
+                            <span class="utlSpan"  url="store.html">仓库</span>
+                        </li>
+                        <li><span id="logoOut">退出</span></li>
+                    </ol>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--headeer-->
+<!--轮播-->
+<div class="ym-slider clear">
+    <div class="bd">
+        <ul>
+            <li>
+                <img src="images/jintai_shopp.png" alt=""/>
+            </li>
+            <li>
+                <img src="images/jintai_shopp.png" alt=""/>
+            </li>
+            <li>
+                <img src="images/jintai_shopp.png" alt=""/>
+            </li>
+            <li>
+                <img src="images/jintai_shopp.png" alt=""/>
+            </li>
+        </ul>
+    </div>
+    <div class="hd">
+        <ul class="clear">
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+</div>
+<!--轮播-->
+<div class="exchange-mall-box" id="exchange-mall-box">
+   <div class="container bt-tm-1px">
+       <div class="filter-box-shop clear">
+           <div class="fl filter-conditions-box clear" id="filter-conditions-box">
+               <span class="btn-filter byprice fl">按价格<i></i></span>
+               <div class="filter-price-box fl" id="filter-price-inputs">
+                   <span class="btn-filter ml5">BP:<input type="text" class="filter-byform" value=""></span>
+                   <em class="line-filter"></em>
+                   <span class="btn-filter">BP:<input type="text" class="filter-byto" value="" ></span>
+                   <div class="filter-sure">
+                       <span class="btn-sure ml10">确定</span>
+                   </div>
+
+               </div>
+               <!-- active-->
+               <div class="btn-filter_content ml10 fl" id="filter_content-btns">
+                   <span class="btn-filter t-c ">筛选</span>
+                   <ol class="btn-color-filter clear" >
+                       <li class="bg-red bt-color">1</li>
+                       <li class="bg-purple bt-color">2</li>
+                       <li class="bg-blue bt-color">3</li>
+                       <li class="bg-lightblue bt-color">4</li>
+                       <li class="bg-green bt-color">5</li>
+                       <li class="bg-gray bt-color">6</li>
+                       <li class="bg-deepgray bt-color">7</li>
+                       <li class="btn-button btn-reset">重置</li>
+                       <li class="btn-button btn-sure">确定</li>
+                   </ol>
+               </div>
+
+           </div>
+           <div class="fr search-box clear" id="search-box-filter">
+               <input type="text" class="search-input fl " value="" placeholder="搜索">
+               <span class="btn-search fr" ><img src="images/search.png" alt=""/></span>
+           </div>
+       </div>
+
+       <div class="exchange-mall-list" id="exchange-mall-list">
+           <div class="nofound-exchange-mall">
+               <img src="images/toukui.png" alt="找不到相关商品！"/>
+               <p> 找不到相关商品！</p>
+           </div>
+           <ul class="clear dno">
+
+           </ul>
+       </div>
+
+       <div class="page-box dno">
+
+       </div>
+   </div>
+</div>
+
+<!--温馨提示-->
+<div class="pop-mask-alert pop-all-meceng dno" >
+    <!-- 弹窗-->
+    <div class="pop-bg-box bt-tm-1px dno" id="alertbox">
+        <i class="icon-delete"></i>
+        <div id="alertcont">
+            <div class="mengheader">提示</div>
+            <div id="alertsss"></div>
+            <i class="sure-alert-btn"></i>
+        </div>
+    </div>
+<!--兑换提示-->
+    <div class="pop-bg-box bt-tm-1px storeAlert dno" id="MallAlert">
+        <i class="icon-delete"></i>
+        <div class="mengheader">提示</div>
+        <div class="storeAlert-box">
+            亲，您确定兑换此物品吗？
+            <p class="red">（饰品兑换的金额将使用账户金额，账户金额不能提现）</p>
+        </div>
+        <div class="clear btn-group">
+            <i class="sure-alert-btn fl" ></i>
+            <i class="makeNo-alert-btn fr"></i>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+</body>
+<script src="js/common.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/exchangemMall.js" type="text/javascript" charset="utf-8"></script>
+</html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8">
+    <meta http-equiv="Access-Control-Allow-Origin" content="*">
+    <meta http-equiv="Pragma" contect="no-cache">
+    <title>电竞</title>
+    <meta name="description" content="飓风电竞">
+    <meta name="Keywords" content="飓风电竞">
+    <link rel="shortcut icon" href="images/logo.png">
+    <link href="lib/scrollbar/jquery.mCustomScrollbar.min.css" rel="stylesheet">
+    <link href="css/index.css" rel="stylesheet">
+    <script src="lib/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="lib/jquery.cookie.js" type="text/javascript" charset="utf-8"></script>
+    <script src="lib/scrollbar/jquery.mCustomScrollbar.concat.min.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body class="wrapper">
+<!--headeer-->
+<div class="header-box" id="headerMain">
+    <div class="container clear">
+        <a class="fl logo-header bt-tm-1px" href="index.html"><img src="images/logo.png"></a>
+        <ul class="fl left-header clear">
+            <li>
+                <span class="utlSpan" url="index.html">绝地求生</span>
+                <ol>
+                    <li>
+                        <span class="utlSpan"  url="index.html">竞技场</span>
+                    </li>
+                    <li>
+                        <span class="utlSpan"  url="gameRecords.html">比赛记录</span>
+                    </li>
+                </ol>
+            </li>
+            <li>
+                <span class="utlSpan" url="exchangemMall.html">兑换商城</span>
+            </li>
+            <li>
+                <a href="https://www.sobot.com/chat/pc/index.html?sysNum=4a16a0c380394bca8ffae5723f5b3903">联系客服</a>
+            </li>
+            <li>
+                <span class="utlSpan" url="chongzhi.html">充值</span>
+            </li>
+        </ul>
+        <div class="fr">
+            <ul class="right-header clear">
+                <li class="hrader-mine-right">
+                    <span><i class="icon-mine icon-msg"></i></span>
+                    <ol class="dno" id="alertMessges">
+                    </ol>
+                </li>
+                <li class="hrader-mine-right">
+                    <span  class="utlSpan" id="notice" url="SystemMessage.html"><i class="icon-mine icon-notice"></i></span>
+                </li>
+                <li class="bp-number-li">
+                    <p class="clear dno"><em class="fl">BP</em><span class="fr">0</span></p>
+                </li>
+                <li id="login">
+                    <div class="btns-login" ><span class="btn-cc pointer">登录</span></div>
+                </li>
+                <li class="islogin-box ml10 dno active">
+                    <span class="utlSpan" url="accountCenter.html">
+                        <div class="user-img">
+                            <img src="images/small-header.png" class="icon-wapper hover-bg1">
+                            <img src="images/small-header-hover.png" class="icon-wapper hover-bg">
+                            <img src="images/bangdingsteam.png" class="icon">
+                        </div>
+                    </span>
+                    <ol>
+                        <li>
+                            <span class="utlSpan"  url="accountCenter.html">账户中心</span>
+                        </li>
+                        <li class="active">
+                            <span class="utlSpan"  url="store.html">仓库</span>
+                        </li>
+                        <li><span id="logoOut">退出</span></li>
+                    </ol>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--headeer-->
+
+<div class="warehouse-library-box" id="warehouse-library-box">
+    <div class="container bt-tm-1px">
+        <div class="bread-lr83">
+            <div class="bread-nav-account mt10">
+                <a href="accountCenter.html" >账户中心</a>
+                <a href="store.html" class="active">仓库</a>
+            </div>
+        </div>
+        <div class="jiaoyilianjieboxs bread-lr83 clear">
+            <div class="fl clear">
+                <input type="text" class="input-delive delivery-url" value="" placeholder="请设置您的交易链接">
+                <span class="btn btn-default niantie" >粘贴</span>
+                <span class="btn btn-default urlupate">保存</span>
+            </div>
+            <div class="fl" id="jiaoyilianjieboxsright">
+                <a class="btn btn-default" href="javascript:void(0);" target="_blank" id="getjiaoyilianjie">获取交易链接</a>
+                <span class="btn btn-default" id="huoqulianjieshi">获取交易链接失败 <img src="images/link.png" alt=""/></span>
+            </div>
+            <div class="fr clear">
+                <input type="text" class="input-delive teleph" value="" placeholder="请输入您的电话号码">
+                <span class="btn btn-default" id="teleupate2">保存</span>
+            </div>
+        </div>
+        <p class="color-org  bread-lr83 mt10"> &nbsp;*交易链接用于您取出物品时，向您发起交易。交易链接不正确，Steam账号受到交易限制都会造成饰品取出失败。
+           &nbsp; &emsp; &emsp; &emsp; &emsp; &emsp;&nbsp; &emsp; &emsp; &emsp; &emsp; &nbsp; *联系方式用于发货失败时客服与您联系。
+        </p>
+        <div class="refresh-btn" id="ageinscangku">
+            <span class="btn btn-default">刷新仓库</span>
+        </div>
+
+        <div class="store-warehouse-box bread-lr83 " id="content_1" >
+            <div class="store-nothing">
+                <img src="images/toukui.png" alt="找不到相关商品！"/>
+                <p> 仓库里什么都没有哦！</p>
+            </div>
+            <ul class="clear" id="cangbox">
+            </ul>
+        </div>
+        <div class="warehouse-footer-box clear" id="warehouse-footer-box">
+              <div class="fl ml36">
+                  <span class="check-all pointer"><i class="check-num-cc"></i>全选</span>
+                  <!--<span class="text-warehouse">未选择饰品</span>-->
+                  <span class="text-warehouse" id="thingname">未选择饰品</span>
+                  <!--已选中<em class="color-org">20件</em>饰品-->
+              </div>
+            <div class="fr mr36">
+                <span class="btn btn-default" id="putStore">取出</span>
+                <span class="btn btn-default" id="chushou">出售</span>
+                <!--<span class="btn btn-org">以<em>46444.54</em>bp的价格出售</span>-->
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--温馨提示-->
+<div class="pop-mask-alert pop-all-meceng dno" id="alertbox">
+    <!-- 弹窗-->
+    <div class="pop-bg-box bt-tm-1px" >
+        <i class="icon-delete"></i>
+        <div id="alertcont">
+            <div class="mengheader">提示</div>
+            <div id="alertsss"></div>
+            <i class="sure-alert-btn"></i>
+        </div>
+    </div>
+</div>
+<!--仓库操作-->
+<div class="pop-mask-alert pop-all-meceng dno" id="storeAlert">
+    <!-- 弹窗-->
+    <div class="pop-bg-box bt-tm-1px storeAlert">
+        <i class="icon-delete"></i>
+        <div class="mengheader">提示</div>
+        <div class="storeAlert-box">
+            亲，您确定出售这些物品吗？
+            <p class="red">（饰品出售后的金额将回到账户金额中，账户金额不能提现）</p>
+        </div>
+        <div class="clear btn-group">
+            <i class="sure-alert-btn fl" id="makeStoreSure"></i>
+            <i class="makeNo-alert-btn fr" id="giveUp"></i>
+        </div>
+    </div>
+</div>
+
+
+<!--操作提示-->
+
+<div class="pop-mask pop-all-meceng dno">
+    <div class="pop-payfor-box bt-tm-1px transaction-failure-box dno" id="transaction-failure-pop" >
+        <i class="icon-delete"></i>
+        <div>
+            <p>无法获取交易链接的解决方式</p>
+            <p>页面打不开，交易链接获取不了的解决方式如下：</p>
+            <p>1. 查看我们的帮助指南，根据指南上的提示进行操作</p>
+            <p>2. 重新尝试获取交易链接并设置即可</p>
+            <p>3. 以上方法如果失败请联系我们的客服人员</p>
+            <p class="red mt10">*为了提货及发货顺利，请将Steam账号个人隐私设置为公开。</p>
+        </div>
+        <img src="images/tu-ti.png" alt=""/>
+
+    </div>
+</div>
+
+
+
+
+</body>
+<script src="js/common.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/store.js" type="text/javascript" charset="utf-8"></script>
+</html>

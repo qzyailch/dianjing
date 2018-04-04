@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8">
+    <meta http-equiv="Access-Control-Allow-Origin" content="*">
+    <meta http-equiv="Pragma" contect="no-cache">
+    <title>电竞-充值</title>
+    <meta name="description" content="飓风电竞">
+    <meta name="Keywords" content="飓风电竞">
+    <link rel="shortcut icon" href="images/logo.png">
+    <link href="css/index.css" rel="stylesheet">
+    <script src="lib/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="lib/jquery.cookie.js" type="text/javascript" charset="utf-8"></script>
+    <script src="lib/scrollbar/jquery.mCustomScrollbar.concat.min.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body class="wrapper">
+<!--headeer-->
+<div class="header-box" id="headerMain">
+    <div class="container clear">
+        <a class="fl logo-header bt-tm-1px" href="index.html"><img src="images/logo.png"></a>
+        <ul class="fl left-header clear">
+            <li>
+                <span class="utlSpan" url="index.html">绝地求生</span>
+                <ol>
+                    <li>
+                        <span class="utlSpan"  url="index.html">竞技场</span>
+                    </li>
+                    <li>
+                        <span class="utlSpan"  url="gameRecords.html">比赛记录</span>
+                    </li>
+                </ol>
+            </li>
+            <li>
+                <span class="utlSpan" url="exchangemMall.html">兑换商城</span>
+            </li>
+            <li>
+                <a href="https://www.sobot.com/chat/pc/index.html?sysNum=4a16a0c380394bca8ffae5723f5b3903">联系客服</a>
+            </li>
+            <li class="active">
+                <span class="utlSpan" url="chongzhi.html">充值</span>
+            </li>
+        </ul>
+        <div class="fr">
+            <ul class="right-header clear">
+                <li class="hrader-mine-right">
+                    <span><i class="icon-mine icon-msg"></i></span>
+                    <ol class="dno" id="alertMessges">
+                    </ol>
+                </li>
+                <li class="hrader-mine-right">
+                    <span  class="utlSpan" id="notice" url="SystemMessage.html"><i class="icon-mine icon-notice"></i></span>
+                </li>
+                <li class="bp-number-li">
+                    <p class="clear dno"><em class="fl">BP</em><span class="fr">0</span></p>
+                </li>
+                <li id="login">
+                    <div class="btns-login" ><span class="btn-cc pointer">登录</span></div>
+                </li>
+                <li class="islogin-box ml10 dno">
+                    <span class="utlSpan" url="accountCenter.html">
+                        <div class="user-img">
+                            <img src="images/small-header.png" class="icon-wapper hover-bg1">
+                            <img src="images/small-header-hover.png" class="icon-wapper hover-bg">
+                            <img src="images/bangdingsteam.png" class="icon">
+                        </div>
+                    </span>
+                    <ol>
+                        <li>
+                            <span class="utlSpan"  url="accountCenter.html">账户中心</span>
+                        </li>
+                        <li>
+                            <span class="utlSpan"  url="store.html">仓库</span>
+                        </li>
+                        <li><span id="logoOut">退出</span></li>
+                    </ol>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--headeer-->
+<!--充值-->
+<div class="topup-infor-box">
+    <div class="container bt-tm-1px">
+        <h2><img src="images/top-up-text.png" alt="充值"/></h2>
+        <div class="amount-topup-div">
+            <ul class="topup-operation-box">
+                <li class="clear amount-li" id="amount-li">
+                    <span class="topup-title">充值金额：</span>
+                    <div class="fl">
+                        <div class="span-amount-group">
+                            <span class="btn btn-default isnum-btn">10</span>
+                            <span class="btn btn-default isnum-btn">50</span>
+                            <span class="btn btn-default isnum-btn">100</span>
+                            <span class="btn btn-default isnum-btn">200</span>
+                            <span class="btn btn-default isnum-btn">500</span>
+                            <span class="btn btn-default" id="customPay">自定义</span>
+                        </div>
+                        <div class="input-amount-group dno">
+                            <input type="text" id="zidingyijine" value="" placeholder="请输入充值金额1-1000" >
+                            <span id="erweimamoeyno" alt="" class="btn btn-default">取消</span>
+                            <span id="erweimamoeyyes" alt="" class="btn btn-default">确定</span>
+                        </div>
+                    </div>
+
+                </li>
+                <li class="clear way-li"  id="way-li">
+                    <span class="topup-title">充值方式：</span>
+                    <div class="fl">
+                        <ul class="pay-wey-choice clear">
+                            <li><img src="images/WeChat.png" alt=""/>微信支付</li>
+                            <li><img src="images/Alipay.png" alt=""/>支付宝支付</li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="clear sweep-yards-li" id="sweep-yards">
+                    <span class="topup-title">扫码充值：</span>
+                    <div class="fl ml150-pay">
+                        <div class="zhifujine" id="zhifujine">
+                            订单金额:￥<em>10</em>
+                        </div>
+                        <div class="erweima_box">
+                            <img src="images/success_pay.png" alt="支付成功" class="end-pay-success dno"/>
+                            <img src="images/erweima_bg.png" alt="扫二维码" class="end-pay-scan"/>
+                            <h4 class="error-pay dno">支付超时</h4>
+                        </div>
+                        <p class="pay_account">扫一扫完成支付</p>
+                        <div class="btn-130 btn-default">重新获取二维码</div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+</div>
+
+
+<!--温馨提示-->
+<div class="pop-mask-alert pop-all-meceng dno" id="alertbox">
+    <!-- 弹窗-->
+    <div class="pop-bg-box bt-tm-1px" >
+        <i class="icon-delete"></i>
+        <div id="alertcont">
+            <div class="mengheader">提示</div>
+            <div id="alertsss"></div>
+            <i class="sure-alert-btn"></i>
+        </div>
+    </div>
+</div>
+
+</body>
+<script src="js/common.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/index.js" type="text/javascript" charset="utf-8"></script>
+</html>
